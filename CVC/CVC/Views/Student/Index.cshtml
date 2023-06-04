@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CVC.Models.Student>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    @foreach (var student in Model)
+    {
+        <p>ID: @student.Id</p>
+        <p>ชื่อ: @student.Name</p>
+        <p>คะแนน: @student.Score</p>
+
+        @if (student.Score < 50)
+        {
+            <p>สอบไม่ผ่าน!</p>
+        }
+        else
+        {
+            <p>สอบผ่าน!</p>
+        }
+        <hr />
+    }
+</div>
